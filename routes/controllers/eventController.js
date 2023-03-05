@@ -51,7 +51,7 @@ exports.getOne = function (req, res) {
       }, {
         model: Comment,
         attributes: ['text'],
-        include: { model: Owner, attributes: ['username', 'pic_hyperlink', 'first_name'] }
+        include: { model: Owner, attributes: ['username', 'pic_hyperlink'] }
       }]
     })
     .then(event => {
@@ -143,7 +143,7 @@ exports.uploadPic = function (req, res) {
           eventData.save();
           let event = eventData.get({plain: true})
           console.log(event)
-          res.status(200).render('eventprofile', {
+          res.status(200).location('eventprofile', {
             ...event,
             logged_in: req.session.logged_in
           });

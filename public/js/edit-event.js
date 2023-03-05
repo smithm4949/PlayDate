@@ -47,6 +47,13 @@ const editEventFormHandler = async (event) => {
 
 };
 
+document.querySelector('#submitEventEdit-btn').addEventListener('click', (event) => {
+  eventValidation(event);
+  editEventFormHandler(event);
+});
+
+
+
 // DELETE event from the THIS event's page
 
 const deleteEventPage = async (event) => {

@@ -1,21 +1,11 @@
-{{!-- <div id="preview" class="d-flex flex-column justify-content-center align-items-center">
-    <img id="preview-img"
-        src="https://res.cloudinary.com/dlkk2oyhp/image/upload/v1677737057/playdate-images/xotpwmc99ujpabb072v6.png"
-        alt="Owner Profile Pic">
-    <button id="upload_widget" class="cloudinary-button mt-4">Upload Your Profile Pic</button>
-    <button id="upload-img-btn" class="mt-4">Finished Updating</button>
-</div>
-
-<script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
-
-
-<script src="/js/upload-image-owner.js"></script> --}}
-
 <form action="/api/owners/upload" enctype="multipart/form-data" method="post">
-    Preview Image:
-    <img id="preview-img"
-        src="https://res.cloudinary.com/dlkk2oyhp/image/upload/v1677737057/playdate-images/xotpwmc99ujpabb072v6.png"
-        alt="Owner Profile Pic">
-    <div>File: <input type="file" name="ownerPic" /></div>
-    <input type="submit" value="Upload" />
+    <h2 class="mt-5 d-flex justify-content-center">After clicking the upload image button, scroll to Submit Change
+        below.</h2>
+    <div class="d-flex flex-row mt-5 mb-5 justify-content-center align-items-center">
+        <div>
+            <label class="image-label">Change Image: </label>
+            <input type="file" name="ownerPic" />
+        </div>
+        <input class="upload-owner-btn btn-quarter" type="submit" value="Upload" />
+    </div>
 </form>

@@ -1,11 +1,12 @@
-{{!-- {{> ownercard}} --}}
+{{> ownercard}}
 
 {{!-- Keeping below in case we change our minds --}}
 {{!-- <button onclick="showEditOwnerForm()" class="btn" type="submit" data-id="{{id}}">Edit Owner Info</button> --}}
-{{>uploadOwner}}
+
 
 <div class="card">
     <div class="edit-owner-form card-body" style="display: block;">
+        {{>uploadOwner}}
         <h3 class="card-header"> Edit {{username}}'s Information</h3>
         <form>
 
@@ -32,7 +33,8 @@
             <div class="d-flex flex-row align-items-center">
                 <div class="input-box-gender">
                     <select id="editowner-gender" name="owner.gender" class="form-input" required>
-                        {{!-- Set the value for the instruction to current gender if user does not make a change to gender --}}
+                        {{!-- Set the value for the instruction to current gender if user does not make a change to
+                        gender --}}
                         <option value="{{gender}}" selected disabled hidden>Select an option</option>
                         <option value="female">Female</option>
                         <option value="male">Male</option>

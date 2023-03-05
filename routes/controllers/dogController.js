@@ -113,7 +113,7 @@ exports.uploadPic = function (req, res) {
           dogData.save();
           let dog = dogData.get({plain: true})
           console.log(dog)
-          res.status(200).render('dogprofile', {
+          res.status(200).location('dogprofile', {
             ...dog,
             logged_in: req.session.logged_in
           });

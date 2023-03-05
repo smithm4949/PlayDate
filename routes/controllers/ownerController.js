@@ -141,7 +141,7 @@ exports.uploadPic = function (req, res) {
           userData.save();
           let owner = userData.get({plain: true})
           console.log(owner)
-          res.status(200).render('profile', {
+          res.status(200).location('profile', {
             ...owner,
             logged_in: req.session.logged_in
           });

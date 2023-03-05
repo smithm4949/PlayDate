@@ -543,7 +543,7 @@ textarea {
     font-weight: 600;
 }
 
-#date-label{
+#date-label {
     top: -15px;
 }
 
@@ -573,7 +573,8 @@ textarea {
     width: 80px;
     height: 80px;
     overflow: hidden;
-    border-radius: 50%;
+    /* border-radius: 50%; */
+    margin-right: 10px;
     /* border: 1px solid blue; */
 
 }
@@ -587,4 +588,13 @@ textarea {
 
 .comment-username {
     font-weight: 700;
+}
+
+.image-label {
+    font-size: 1.2em;
+    color: var(--nav-text-color);
+    opacity: 90%;
+    font-weight: 600;
+    /* Disables pointer clicking and selecting/highlighting text */
+    pointer-events: none;
 }
