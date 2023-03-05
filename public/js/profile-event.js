@@ -136,4 +136,4 @@ function eventValidation(event) {
   if (!name || !location_zip || ziplength !== 5 || !description || !date || !time) {
     return
   }
-}git p
+}
