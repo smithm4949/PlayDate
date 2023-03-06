@@ -41,7 +41,7 @@ exports.getOne = function (req, res) {
       include: [{
         model: Owner,
         as: 'host',
-        attributes: ['first_name', 'last_name', 'pic_hyperlink'],
+        attributes: ['username','first_name', 'last_name', 'pic_hyperlink'],
         include: { model: Dog }
       }, 
       {
@@ -51,7 +51,11 @@ exports.getOne = function (req, res) {
       }, {
         model: Comment,
         attributes: ['id', 'text'],
+<<<<<<< HEAD
         include: { model: Owner, attributes: ['username', 'pic_hyperlink'] }
+=======
+        include: { model: Owner, attributes: ['id', 'username', 'pic_hyperlink'] }
+>>>>>>> 42fe5f599a99e22f740b1f2ba0272148eb40a6ec
       }]
     })
     .then(event => {

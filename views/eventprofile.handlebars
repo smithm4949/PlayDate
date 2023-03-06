@@ -2,14 +2,17 @@
 If owned by user, allow edit; otherwise, view public info --}}
 
 <div class="d-flex flex-row justify-content-center p-3">
-    <div class="card event-{{id}}-card p-3">
+    <div class="card event-{{id}}-card p-3" style="max-width: 1000px;">
         <div class="row no-gutters">
             <div class="col-md-5">
-                <img src="{{pic_hyperlink}}" class="card-img" alt="Pic of {{name}}">
+                <img src="{{pic_hyperlink}}" class="card-img" alt="Pic of {{name}} event">
             </div>
             <div class="col-md-7">
                 <div class="card-body event-information d-flex flex-column">
                     <p class="card-title">{{name}}</p>
+                    <p class="card-host">Hosted by:
+                        <a href="../../profile/{{host_id}}" class="host-profile-link">{{host.username}}</a>
+                    </p>
                     <p class="card-text">Location: {{location_zip}}</p>
                     <p class="card-text">Description: {{description}}</p>
                     <p class="card-text">Date: {{format_date date}}</p>

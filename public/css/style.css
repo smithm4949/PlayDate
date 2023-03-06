@@ -532,7 +532,7 @@ textarea {
 }
 
 .owner-card {
-    max-width: 80%;
+    max-width: 1000px;
 }
 
 .dog-information>*,
@@ -620,4 +620,37 @@ textarea {
 
 #dog-card-body {
     line-height: 2em;
+}
+
+.username-profile-link {
+    text-decoration: none;
+    color: var(--nav-text-color);
+}
+
+.username-profile-link:hover {
+    text-decoration: none;
+    color: var(--nav-text-color);
+}
+
+.card-host {
+    font-size: 2.0rem;
+    text-decoration: none;
+    color: var(--nav-text-color);
+}
+
+
+.card-host:hover a {
+    font-size: 2.0rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--nav-text-color);
+}
+
+.event-information .card-text {
+    font-size: 1.5rem;
+}
+
+.host-profile-link {
+    text-decoration: none;
+    color: var(--nav-text-color);
 }

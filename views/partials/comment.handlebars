@@ -1,4 +1,5 @@
 {{!-- All comments template --}}
+<<<<<<< HEAD
 {{#if comments.length}}
 <div>
     <div id='commentUl' class="d-flex flex-column comments"><!--the container for all the comments should be in column form-->
@@ -44,6 +45,48 @@
                             </div> --}}
                         <div>
                     {{/if}}
+=======
+<div class="d-flex flex-column comments mt-5"><!--the container for all the comments should be in column form-->
+    {{#if comments.length}}
+    {{#each comments as |comment|}}
+    <div class=" d-flex align-item-center mt-3 p-2">
+            {{!-- profile icon --}}
+            <div class="circular--landscape pb-3 ps-4">
+                <img src="{{comment.owner.pic_hyperlink}}" alt="Picture of {{comment.owner.username}}">
+            </div>
+
+            {{!-- body --}}
+            <div class="comment-main">
+                <a href="../../profile/{{comment.owner.id}}" class="username-profile-link">
+                    <h5 class="ps-2 comment-username">{{comment.owner.username}}</h5>
+                </a>
+                <p class="comment-text pt-1 ps-2">
+                    {{comment.text}}
+                </p>
+                {{#if ownsComment}}
+                <button>
+                    <img id="delete-comment-btn" class="delete-comment" data-id="{{comment.id}}"
+                        src="/images/delete-Freepik-32px.png" alt="Trash Can">
+                </button>
+                <button>
+                    <img id="edit-comment-btn" class="edit-comment" data-id="{{comment.id}}" onclick="eventEditForm()"
+                        type="submit">
+                </button>
+                <div id="commentEditCard" class="card" style="display: none;">
+                    <div class="edit-comment-form card-body" style="display: block;">
+                        <h3 class="card-header"> Edit {{name}}'s Information</h3>
+                        <form class="edit-comment-form">
+                            <div class="input-box">
+                                <input id="editcomment-text" name="comment.text" type="text" value="{{text}}"
+                                    class="form-input" required>
+                                <label for="comment.text" class="form-label">{{text}}</label>
+                            </div>
+                        </form>
+                        <button id="submitEditComment-btn" class="btn mt-3" type="submit">Submit Change to My
+                            Comment</button>
+                        <br> <br>
+                    </div>
+>>>>>>> 42fe5f599a99e22f740b1f2ba0272148eb40a6ec
                 </div>
             </div>
         {{/each}}

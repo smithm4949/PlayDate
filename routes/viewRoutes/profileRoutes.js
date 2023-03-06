@@ -11,10 +11,10 @@ router.get('/', withAuth, async (req, res) => {
         // Find the logged in user based on the session ID
         const user = await Owner.findByPk(req.session.user_id, {
             attributes: { exclude: ['password'] },
-            include: {model: Dog}
+            include: { model: Dog }
         });
         const events = await Event.findAll({
-            where: {host_id: req.session.user_id},
+            where: { host_id: req.session.user_id },
             raw: true
         });
         let userObj = user.get({ plain: true });
@@ -30,7 +30,7 @@ router.get('/', withAuth, async (req, res) => {
 }
 );
 
-//Gets ALL posts and displays it on homepage
+//Gets single dog's profile
 router.get('/dog/:id', async (req, res) => {
     // Send the rendered Handlebars.js template back as the response
     try {
@@ -52,7 +52,7 @@ router.get('/dog/:id', async (req, res) => {
 }
 );
 
-//Gets ALL posts and displays it on homepage
+//Gets logged in user's id to displays their profile page
 router.get('/owner/:id', withAuth, async (req, res) => {
     // Send the rendered Handlebars.js template back as the response
     try {
@@ -65,6 +65,27 @@ router.get('/owner/:id', withAuth, async (req, res) => {
         const user = userData.get({ plain: true });
 
         res.render('profileowner', {
+            ...user,
+            logged_in: req.session.logged_in
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+}
+);
+
+//Gets any single (1) owner's profile with their dogs
+router.get('/:id', async (req, res) => {
+    // Send the rendered Handlebars.js template back as the response
+    try {
+        // Find the user based on the request parameter called host_id/owner.id
+        const userData = await Owner.findByPk(req.params.id, {
+            attributes: { exclude: ['password'] },
+            include: [{ model: Dog }],
+        });
+        //  res.status(200).json(userData); //For testing only
+        const user = userData.get({ plain: true });
+        res.render('profilesingle', {
             ...user,
             logged_in: req.session.logged_in
         });
