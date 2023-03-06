@@ -33,7 +33,7 @@ Next seed the data into the MySQL database.
 npm run seed
 ```
 ## Link
-PlayDate application is deployed live [here](https://git.heroku.com/boiling-temple-57076.git)
+PlayDate application is deployed live [here](https://boiling-temple-57076.herokuapp.com/)
 
 ## Usage 
 The application will be invoked by using the following command:

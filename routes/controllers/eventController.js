@@ -50,7 +50,7 @@ exports.getOne = function (req, res) {
         attributes: ['first_name','last_name', 'pic_hyperlink']
       }, {
         model: Comment,
-        attributes: ['text'],
+        attributes: ['id', 'text'],
         include: { model: Owner, attributes: ['username', 'pic_hyperlink'] }
       }]
     })

@@ -27,8 +27,11 @@ document.querySelector('#submitComment-btn').addEventListener('click', (event) =
 
 // DELETE a COMMENT
 const delCommentButtonHandler = async (event) => {
+
     if (event.target.hasAttribute('data-id')) {
         const id = event.target.getAttribute('data-id');
+
+        console.log(id);
 
         const response = await fetch(`/api/comments/${id}`, {
             method: 'DELETE',
@@ -45,38 +48,38 @@ document.querySelector('.comments').addEventListener('click', delCommentButtonHa
 
 // EDIT A COMMENT
 // User clicks on edit comment button IF user OWNs the comment - see handlebar for {{if ownsComment}}
-function editComment() {
-    document.querySelector('#commentEditCard').style.display = 'block';
+// function eventCommentForm() {
+//     document.querySelector('#commentEditCard').style.display = 'block';
 
-    const commentEditForm = document.querySelector('.edit-comment-form');
-    commentEditForm.scrollIntoView({ behavior: 'smooth', block: "start" });
-}
+//     const commentEditForm = document.querySelector('.edit-comment-form');
+//     commentEditForm.scrollIntoView({ behavior: 'smooth', block: "start" });
+// }
 
-// PUT for DB
-const editCommentFormHandler = async (event) => {
-    event.preventDefault();
+// // PUT for DB
+// const editCommentFormHandler = async (event) => {
+//     event.preventDefault();
 
-    const text = document.querySelector('#editcomment-text').value.trim();
+//     const text = document.querySelector('#editcomment-text').value.trim();
 
-    if (event.target.hasAttribute('data-id')) {
-        const id = event.target.getAttribute('data-id');
+//     if (event.target.hasAttribute('data-id')) {
+//         const id = event.target.getAttribute('data-id');
 
-        const response = await fetch(`/api/comments/${id}`, {
-            method: 'PUT',
-            body: JSON.stringify({ text }),
-            headers: { 'Content-Type': 'application/json' },
-        });
+//         const response = await fetch(`/api/comments/${id}`, {
+//             method: 'PUT',
+//             body: JSON.stringify({ text }),
+//             headers: { 'Content-Type': 'application/json' },
+//         });
 
-        // IF response is successful, then reload
-        if (response.ok) {
-            document.location.reload();
-        } else {
-            console.log(response.statusText);
-        }
+//         // IF response is successful, then reload
+//         if (response.ok) {
+//             document.location.reload();
+//         } else {
+//             console.log(response.statusText);
+//         }
 
-    };
-};
+//     };
+// };
 
-document.querySelector('#submitEditComment-btn').addEventListener('click', (event) => {
-    editCommentFormHandler(event);
-});
+// document.querySelector('.submitEditComment-btn').addEventListener('click', (event) => {
+//     editCommentFormHandler(event);
+// });
