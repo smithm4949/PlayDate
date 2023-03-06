@@ -1,5 +1,5 @@
 {{!-- Form for adding events --}}
-<div>
+<div class="mb-5">
     <div id="addEventSection" style="display:block;">
         <h2>Do you want to create an event? </h2>
         <button onclick="showEventForm()" type="submit" class="btn-half">Add an EVENT!</button>
@@ -36,7 +36,7 @@
         </div>
 
         <div class="input-box">
-            <input id="datePickerId" class="event-date" type="date" >
+            <input id="datePickerId" class="new-event-date" type="date" required>
             <label id="date-label">Date</label>
             <div class="no-date-msg invalid-msg d-none">
                 Select a date
@@ -44,7 +44,7 @@
         </div>
 
         <div class="input-box">
-            <input class="addEvent-time" type="text" >
+            <input id="addEvent-time" type="text" required>
             <label id="time-label">Time</label>
             <div class="no-time-msg invalid-msg d-none">
                 Select a time

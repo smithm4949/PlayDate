@@ -42,9 +42,12 @@ async function signupFormHandler(event) {
 
 const getDogInfo = () => {
   const name = document.querySelector('#dog-name-signup').value.trim();
-  const age = document.querySelector('#dog-age-signup').value.trim();
+  const age_years = parseInt(document.querySelector('#dog-age-signup').value.trim());
+  const age_months = parseInt(document.querySelector('#dog-age-months-signup').value.trim());
   const breed = document.querySelector('#dog-breed-signup').value.trim();
   const gender = document.querySelector('#dog-gender-signup').value.trim();
+
+  const age = (age_years * 12) + age_months;
 
   return { name, age, breed, gender };
 }
@@ -127,15 +130,20 @@ function ownerValidation(event) {
 function dogValidation(event) {
   event.preventDefault();
   const name = document.querySelector('#dog-name-signup').value.trim();
-  const age = document.querySelector('#dog-age-signup').value.trim();
-  const ageLength = age.length;
-
+  const ageYears = document.querySelector('#dog-age-signup').value.trim();
+  const ageYearsLength = ageYears.length;
+  const ageMonths = document.querySelector('#dog-age-months-signup').value.trim();
+  const ageMonthsLength = ageMonths.length;
+  const ageTotal = (parseInt(ageYears)*12) + parseInt(ageMonths);
   const breed = document.querySelector('#dog-breed-signup').value.trim();
 
   const nameError = document.querySelector('.no-dog-name-msg')
-  const ageError = document.querySelector('.no-dog-age-msg')
-  const maxAgeError = document.querySelector('.max-dog-age-msg')
+  const ageYearsError = document.querySelector('.no-dog-age-msg')
+  const maxAgeYearsError = document.querySelector('.max-dog-age-msg')
+  const ageMonthsError = document.querySelector('.no-dog-age-months-msg')
+  const maxAgeMonthsError = document.querySelector('.max-dog-age-months-msg')
   const breedError = document.querySelector('.no-dog-breed-msg')
+
 
   if (!name) {
     nameError.classList.remove("d-none")
@@ -143,18 +151,37 @@ function dogValidation(event) {
     nameError.classList.add("d-none")
   }
 
-  if (!age) {
-    ageError.classList.remove("d-none")
-    maxAgeError.classList.add("d-none")
-  } else if (ageLength > 2) {
-    ageError.classList.add("d-none")
-    maxAgeError.classList.remove("d-none")
-  } else if (age > 35) {
-    ageError.classList.add("d-none")
-    maxAgeError.classList.remove("d-none")
+  if (!ageYears) {
+    ageYearsError.classList.remove("d-none")
+    maxAgeYearsError.classList.add("d-none")
+  } else if (ageYearsLength > 2) {
+    ageYearsError.classList.add("d-none")
+    maxAgeYearsError.classList.remove("d-none")
+  } else if (ageYears > 35) {
+    ageYearsError.classList.add("d-none")
+    maxAgeYearsError.classList.remove("d-none")
   } else {
-    ageError.classList.add("d-none")
-    maxAgeError.classList.add("d-none")
+    ageYearsError.classList.add("d-none")
+    maxAgeYearsError.classList.add("d-none")
+  }
+
+  if (!ageMonths) {
+    ageMonthsError.classList.remove("d-none")
+    maxAgeMonthsError.classList.add("d-none")
+  } else if (ageMonthsLength > 2) {
+    ageMonthsError.classList.add("d-none")
+    maxAgeMonthsError.classList.remove("d-none")
+  } else if (ageMonths > 11) {
+    ageMonthsError.classList.add("d-none")
+    maxAgeMonthsError.classList.remove("d-none")
+  } else {
+    ageMonthsError.classList.add("d-none")
+    maxAgeMonthsError.classList.add("d-none")
+  }
+
+  if (ageTotal > 420) {
+    maxAgeYearsError.classList.remove("d-none")
+    maxAgeMonthsError.classList.remove("d-none")
   }
 
   if (!breed) {
@@ -163,7 +190,7 @@ function dogValidation(event) {
     breedError.classList.add("d-none")
   }
 
-  if (!name || !age || ageLength !== 2 || age > 35 || !breed) {
+  if (!name || !ageYears || ageYears > 2 || ageYears > 35 || !ageMonths || ageMonthsLength > 2 || ageMonths > 11 || ageTotal > 420 || !breed) {
     return
   }
 }

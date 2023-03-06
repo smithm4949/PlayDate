@@ -8,7 +8,7 @@ require('dotenv').config();
 // There are view routes prepended by [rootURL].com/
 
 router.get('/', async (req, res) => {
-    eventController.getAllforZip(req, res)
+    eventController.getAll(req, res)
     .then(events => {
         console.log("----- INSIDE EVENT CONTROLLER -----")
         plainEvents = events.map(event => event.get({ plain: true }));

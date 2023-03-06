@@ -7,7 +7,7 @@
     </div>
 
     <div class="owner-btns">
-      <a class="owner-anchor" style="text-decoration: none" href="profile/owner/{{id}}"> <button class="btn">
+      <a class="owner-anchor" style="text-decoration: none" href="../../../profile/owner/{{id}}"> <button class="btn">
           Update Profile</button></a>
     </div>
     </div>  
@@ -18,7 +18,7 @@
   {{!-- if statement prevents the horizontal scroll showing if no cards --}}
   {{#if dogs.length}}
     {{!-- CHECK IF adding rows 1 prevents overflow! <div id="dCards-section" class="container" rows="1">  --}}
-    <div id="dCards-section" class="container"> 
+    <div id="dCards-section"> 
       <div id="dCards">
         {{> dogcard}} 
       </div>

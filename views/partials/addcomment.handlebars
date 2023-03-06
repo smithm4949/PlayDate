@@ -1,18 +1,17 @@
-<form id="add-comment-form" class="post-form mt-3 d-flex flex-column d-none">
-    <label>Add Comment</label>
-    <textarea type="text" id="comment-text" class="form-control input-group mt-2" rows="5" aria-label="Post Contents"
-        aria-describedby="basic-addon1">{{comment.text}}</textarea>
-
-    {{!-- buttons --}}
-    <div class="buttons mt-2 d-flex justify-text-end">
-        {{!-- go back = reactivate new Post icon/dashboard's other posts if there is any --}}
-        <button class="back-button btn-quarter-alt me-2">Go Back</button>
-        {{!-- post = PUT route to update post --}}
-        
-        {{#if logged_in}}
-        <button id='submitComment-btn' class="add-comment-button btn-quarter ps-3 pe-3" type="submit">Add</button>
-        {{else}}
-        <button class="log-in-button ps-3 pe-3"><a href="/login">Log In</a></button>
-        {{/if}}
-    </div>
-</form>
+<div class="add-comment-form-section" style="display:block;">
+    <form id="add-comment-form" class="post-form mt-3 d-flex flex-column">
+        <div class="input-box">
+            <input id="comment-text" class="form-control input-group mt-2" type="text">
+            <label>Add Comment</label>
+        </div>
+        {{!-- buttons --}}
+        <div class="buttons mt-1 d-flex justify-content-end">
+            {{!-- post = PUT route to update post --}}
+            {{#if logged_in}}
+            <button id='submitComment-btn' class="add-comment-button btn-quarter ps-3 pe-3" type="submit">Add</button>
+            {{else}}
+            <button class="log-in-button btn-quarter ps-3 pe-3"><a href="/login">Log In</a></button>
+            {{/if}}
+        </div>
+    </form>
+</div>

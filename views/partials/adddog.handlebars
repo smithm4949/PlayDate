@@ -1,26 +1,36 @@
-<div>
+<div class="mt-5">
     <div id="addDogSection" style="display:block;">
         <h2>Do you have more furry friends? </h2>
         <button onclick="showNewDogForm()" class="add-dog-btn" type="submit">Add additional dogs</button>
     </div>
-    <form id="dogForm" class="mt-5 dogForm" style="display: none;">
+    <form id="dogForm" class="mt-5 mb-5 dogForm" style="display: none;">
+        <div class="input-box">
+            <input id="dog-name" type="text" required>
+            <label>Name</label>
+            <div class="no-dog-name-msg invalid-msg d-none">
+                Add your dog's name
+            </div>
+        </div>
 
         <div class="d-flex flex-row align-items-center">
             <div class="input-box-half">
-                <input id="dog-name" type="text" required>
-                <label>Name</label>
-                <div class="no-dog-name-msg invalid-msg d-none">
-                    Add your dog's name
-                </div>
-            </div>
-
-            <div class="input-box-half">
                 <input id="dog-age" type="number" required>
-                <label>Age</label>
+                <label>Age (in Years)</label>
                 <div class="no-dog-age-msg invalid-msg d-none">
                     Add your dog's age
                 </div>
                 <div class="max-dog-age-msg invalid-msg d-none">
+                    Check dog's age
+                </div>
+            </div>
+
+            <div class="input-box-half">
+                <input id="dog-age-months" type="number" required>
+                <label>Age (in Months)</label>
+                <div class="no-dog-age-months-msg invalid-msg d-none">
+                    Add your dog's age
+                </div>
+                <div class="max-dog-age-months-msg invalid-msg d-none">
                     Check dog's age
                 </div>
             </div>

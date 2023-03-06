@@ -82,16 +82,15 @@
 
     <h3 class="mb-3">Now Tell Us About Your Furry Friend</h3>
 
-    <div class="d-flex flex-row align-items-center">
-      <div class="input-box-half">
-
-        <input id="dog-name-signup" type="text" required>
-        <label>Name</label>
-        <div class="no-dog-name-msg invalid-msg d-none">
-          Add your dog's name
-        </div>
+    <div class="input-box">
+      <input id="dog-name-signup" type="text" required>
+      <label>Name</label>
+      <div class="no-dog-name-msg invalid-msg d-none">
+        Add your dog's name
       </div>
+    </div>
 
+    <div class="d-flex flex-row align-items-center">
       <div class="input-box-half">
         <input id="dog-age-signup" type="number" maxlength="2" required>
         <label id="age-id">Age (in Years)</label>
@@ -102,28 +101,39 @@
           Check dog's age
         </div>
       </div>
-    </div>
-
-
-    <div class="d-flex flex-row align-items-center">
-      <div class="input-box-gender">
-        <select id="dog-gender-signup">
-          <option value="female">Female</option>
-          <option value="male">Male</option>
-        </select>
-        <label class="gender-label">Gender</label>
-      </div>
 
       <div class="input-box-half">
-        <input id="dog-breed-signup" type="text" required>
-        <label>Breed</label>
-        <div class="no-dog-breed-msg invalid-msg d-none">
-          Add your dog's breed
+        <input id="dog-age-months-signup" type="number" maxlength="2" required>
+        <label id="age-months-id">Age (in Months)</label>
+        <div class="no-dog-age-months-msg invalid-msg d-none">
+          Add your dog's age
+        </div>
+        <div class="max-dog-age-months-msg invalid-msg d-none">
+          Check dog's age
         </div>
       </div>
     </div>
+</div>
 
-  </form>
+<div class="d-flex flex-row align-items-center">
+  <div class="input-box-gender">
+    <select id="dog-gender-signup">
+      <option value="female">Female</option>
+      <option value="male">Male</option>
+    </select>
+    <label class="gender-label">Gender</label>
+  </div>
+
+  <div class="input-box-half">
+    <input id="dog-breed-signup" type="text" required>
+    <label>Breed</label>
+    <div class="no-dog-breed-msg invalid-msg d-none">
+      Add your dog's breed
+    </div>
+  </div>
+</div>
+
+</form>
 
 </div>
 

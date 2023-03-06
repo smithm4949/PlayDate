@@ -11,6 +11,7 @@ const config = {localPath: '/events', routes: [
 
 const router = routerSetupHelper(config, controller);
 
-router.get('/test/:id', controller.testFind)
+router.get('/test/:id', controller.testFind);
+router.post('/events/upload', controller.uploadPic);
 
 module.exports = router;

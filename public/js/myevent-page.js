@@ -1,5 +1,6 @@
 // DELETE an event FROM My Event Page
 
+// DELETE EVENT
 const myEventsDeleteEventHandler = async (event) => {
 
     const myEventSection = document.querySelector('.myevents-list');

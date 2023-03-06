@@ -26,7 +26,8 @@ Dog.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             validate: {
-                len: [1, 2],
+                len: [1, 3],
+                max: 420,
             }
         },
         breed: {

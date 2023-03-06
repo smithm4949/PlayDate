@@ -33,7 +33,7 @@ Next seed the data into the MySQL database.
 npm run seed
 ```
 ## Link
-PlayDate application is deployed live [here](PLACEHOLDER)
+PlayDate application is deployed live [here](https://git.heroku.com/boiling-temple-57076.git)
 
 ## Usage 
 The application will be invoked by using the following command:
@@ -150,3 +150,7 @@ Credit for tutorials and guides I utilized in my code
 [Secured Lock icon provided by Freepik from Flaticon](https://www.flaticon.com/free-icon/secured-lock_17354)
 
 [navbar span icon provided by Alkhalifi Design Flaticon](https://www.flaticon.com/free-icon/menu_8212733)
+
+[Rounding numbers](https://pawelgrzybek.com/rounding-and-truncating-numbers-in-javascript/)
+
+[Handlebar built-in helpers: includesZero](https://handlebarsjs.com/guide/builtin-helpers.html#if)

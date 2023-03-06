@@ -39,7 +39,9 @@ router.get('/dog/:id', async (req, res) => {
         });
         //  res.status(200).json(dogData); //For testing only
         const dog = dogData.get({ plain: true });
-
+        console.log("------------- HERE IN DOG ID RENDER ROUTE -----------");
+        console.log(req.params.id);
+        req.session.dog_id = req.params.id
         res.render('dogprofile', {
             ...dog,
             logged_in: req.session.logged_in

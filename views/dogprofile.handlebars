@@ -11,10 +11,16 @@
             <div class="col-md-7">
                 <div class="card-body dog-information">
                     <p class="card-title">{{name}}</p>
-                    <p class="card-text">{{age}}</p>
+                    {{#if (format_age_years age) includeZero = false}}
+                    <p class="card-text">{{format_age_years age}} years old</p>
+                    {{else}}
+                    <p class="card-text">{{format_age_months age}} months old</p>
+                    {{/if}}
                     <p class="card-text">{{gender}}</p>
                     <p class="card-text">{{breed}}</p>
-                    <button id="editFromDogSummary" class="btn" onclick="editFromDogSummary()" type="submit"> Edit {{name}} </button>
+                    {{!-- Edit Dog Form toggle button --}}
+                    {{!-- <button id="editFromDogSummary" class="btn" onclick="editFromDogSummary()" type="submit"> Edit
+                        {{name}} </button> --}}
                 </div>
             </div>
         </div>
@@ -22,7 +28,7 @@
 </div>
 
 {{!-- {{#if ownsDog}} --}}
-<div id="dogEditCard" class="card" style="display: none;">
+<div id="dogEditCard" class="card" style="display: block;">
     {{>uploadDog}}
     <div class="edit-dog-form card-body" style="display: block;">
         <h3 class="card-header"> Edit {{name}}'s Information</h3>
@@ -35,33 +41,55 @@
                 </div>
             </div>
 
-            <div class="input-box">
-                <input id="editdog-age" name="dog.age" type="number" value="{{age}}" class="form-input" required>
-                <label for="dog.age" class="form-label">{{name}}'s Age</label>
-                <div class="no-dog-age-msg invalid-msg d-none">
-                    Add your dog's age
+
+            <div class="d-flex flex-row align-items-center">
+                <div class="input-box-half">
+                    <input id="editdog-age" name="dog.age" type="number" value="{{format_age_years age}}"
+                        class="form-input" required>
+                    <label for="dog.age" class="form-label">{{name}}'s Age in Years</label>
+                    <div class="no-dog-age-msg invalid-msg d-none">
+                        Add your dog's age
+                    </div>
+                    <div class="max-dog-age-msg invalid-msg d-none">
+                        Check dog's age
+                    </div>
                 </div>
-                <div class="max-dog-age-msg invalid-msg d-none">
-                    Check dog's age
+
+                <div class="input-box-half">
+                    <input id="editdog-age-months" name="dog.age-months" type="number" value="{{format_age_months age}}"
+                        class="form-input" required>
+                    <label for="dog.age-months" class="form-label">{{name}}'s Age in Months</label>
+                    <div class="no-dog-age-months-msg invalid-msg d-none">
+                        Add your dog's age
+                    </div>
+                    <div class="max-dog-age-months-msg invalid-msg d-none">
+                        Check dog's age
+                    </div>
                 </div>
             </div>
 
-            <div class="input-box">
-                <input id="editdog-breed" name="dog.breed" type="text" value="{{breed}}" class="form-input" required>
-                <label for="dog.breed" class="form-label">{{name}}'s Breed</label>
-                <div class="no-dog-breed-msg invalid-msg d-none">
-                    Add your dog's breed
+            <div class="d-flex flex-row align-items-center">
+                <div class="input-box-gender">
+                    <select id="editdog-gender" name="dog.gender" class="form-input" required>
+                        {{!-- Set the value for the instruction to current gender if user does not make a change to
+                        gender
+                        --}}
+                        <option value="{{gender}}" selected disabled hidden>Select an option</option>
+                        <option value="female">Female</option>
+                        <option value="male">Male</option>
+                    </select>
+                    <label for="dog.gender" class="form-label">{{name}}'s Gender</label>
                 </div>
-            </div>
 
-            <div class="input-box-gender-quarter">
-                <select id="editdog-gender" name="dog.gender" class="form-input" required>
-                    {{!-- Set the value for the instruction to current gender if user does not make a change to gender --}}
-                    <option value="{{gender}}" selected disabled hidden>Select an option</option>
-                    <option value="female">Female</option>
-                    <option value="male">Male</option>
-                </select>
-                <label for="dog.gender" class="form-label">{{name}}'s Gender</label>
+                <div class="input-box-half">
+                    <input id="editdog-breed" name="dog.breed" type="text" value="{{breed}}" class="form-input"
+                        required>
+                    <label for="dog.breed" class="form-label">{{name}}'s Breed</label>
+                    <div class="no-dog-breed-msg invalid-msg d-none">
+                        Add your dog's breed
+                    </div>
+                </div>
+
             </div>
         </form>
         <button id="submitEdit-btn" class="btn mt-3" type="submit">Submit Change to {{name}}'s Profile</button>

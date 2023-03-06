@@ -12,5 +12,6 @@ const config = {localPath: '/owners', routes: [
 ]};
 
 const router = routerSetupHelper(config, controller);
+router.post('/owners/upload', controller.uploadPic);
 
 module.exports = router;
