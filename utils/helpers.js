@@ -16,5 +16,5 @@ module.exports = {
         const ageRemainderMonths = parseInt(age) % 12
         const ageMonths = Math.round(ageRemainderMonths)
         return ageMonths
-    }
+    },
 };
