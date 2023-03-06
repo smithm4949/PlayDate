@@ -1,9 +1,9 @@
 {{!-- All comments template --}}
 {{#if comments.length}}
 <div>
-    <div class="d-flex flex-column comments"><!--the container for all the comments should be in column form-->
+    <div id='commentUl' class="d-flex flex-column comments"><!--the container for all the comments should be in column form-->
         {{#each comments as |comment|}}
-            <div class="d-flex align-item-center mt-3 p-2">
+            <div class="d-flex align-item-center mt-3 p-2 hidden">
                 {{!-- profile icon --}}
                 <div class="circular--landscape pb-3 ps-4">
                     <img src="{{comment.owner.pic_hyperlink}}" alt="Picture of {{comment.owner.username}}">
@@ -36,7 +36,7 @@
                                             </label>
                                         </div>
                                     </form>
-                                    <button class="submitEditComment-btn btn mt-3" type="submit">
+                                    <button id="submitEditComment-btn btn mt-3" type="submit">
                                         Submit Change to My Comment
                                     </button>
                                     <br> <br>
@@ -49,6 +49,7 @@
         {{/each}}
     </div>
 </div>
+
 
 {{else}}
 <h2 class="text-center">

@@ -3,20 +3,20 @@
     <div class="event-card-container event-list flex-wrap">
         {{#each events as |event|}}
         <div class="card event-cards">
-            <img class="card-img-top" src="{{pic_hyperlink}}" alt="Event icon">
-            <div class="card-body">
-                <h5 class="event-name card-title">{{event.name}}</h5>
-                <p class="event-location card-subtitle mb-2">{{event.location_zip}}</p>
+            <div class="d-flex flex-column justify-content-end">
+                <img class="card-img-top" src="{{pic_hyperlink}}" alt="Event icon" height="300px;">
+                <h5 class="event-name card-title pl-2 pr-2 mb-auto ">{{event.name}}</h5>
+            </div>
+            <div id="dog-card-body" class="card-body mt-1 d-flex flex-column justify-content-start">
+                <p class="event-location card-subtitle  mb-2">{{event.location_zip}}</p>
                 <p class="event-date card-subtitle mb-2">{{format_date event.date}}</p>
                 <p class="event-time card-subtitle">{{time}}</p>
-                <p class="event-description card-text">{{event.description}}</p>
-
-                <div class="buttons event-buttons flex-row justify-content-between">
-                    <a class="event-anchor" style="text-decoration: none" href="events/{{event.id}}">
-                        <button class="edit-event-btn edit-event-btn btn-sm btn-danger"> View Details </button>
-                    </a>
-                </div>
-
+                <p class="event-description card-text overflow-hidden">{{event.description}}</p>
+            </div>
+            <div class="buttons event-buttons d-flex flex-column justify-content-end">
+                <a class="event-anchor" style="text-decoration: none" href="events/{{event.id}}">
+                    <button class="edit-event-btn edit-event-btn btn-sm btn-danger"> View Details </button>
+                </a>
             </div>
         </div>
         {{/each}}

@@ -51,16 +51,6 @@ const eventData = [
     date: '2023-06-14 16:00:00',
     host_id: '2'
   },
-  {
-    name: 'Enjoy the Sunshine!',
-    pic_hyperlink: 'https://res.cloudinary.com/dcvtyvwii/image/upload/v1677891322/classImages/default-event.png',
-    location_zip: 20854,
-    location_name: 'Potomac Park',
-    description: 'Throw the balls and give lots of treats!',
-    time: '12:30pm',
-    date: '2023-02-14 16:00:00',
-    host_id: '1'
-  }
 ];
 
 const eventAttendees = [

@@ -18,8 +18,9 @@
                     {{/if}}
                     <p class="card-text">{{gender}}</p>
                     <p class="card-text">{{breed}}</p>
-                    <button id="editFromDogSummary" class="btn" onclick="editFromDogSummary()" type="submit"> Edit
-                        {{name}} </button>
+                    {{!-- Edit Dog Form toggle button --}}
+                    {{!-- <button id="editFromDogSummary" class="btn" onclick="editFromDogSummary()" type="submit"> Edit
+                        {{name}} </button> --}}
                 </div>
             </div>
         </div>
@@ -27,7 +28,7 @@
 </div>
 
 {{!-- {{#if ownsDog}} --}}
-<div id="dogEditCard" class="card" style="display: none;">
+<div id="dogEditCard" class="card" style="display: block;">
     {{>uploadDog}}
     <div class="edit-dog-form card-body" style="display: block;">
         <h3 class="card-header"> Edit {{name}}'s Information</h3>

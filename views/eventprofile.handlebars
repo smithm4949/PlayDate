@@ -8,22 +8,24 @@ If owned by user, allow edit; otherwise, view public info --}}
                 <img src="{{pic_hyperlink}}" class="card-img" alt="Pic of {{name}}">
             </div>
             <div class="col-md-7">
-                <div class="card-body event-information">
+                <div class="card-body event-information d-flex flex-column">
                     <p class="card-title">{{name}}</p>
                     <p class="card-text">Location: {{location_zip}}</p>
                     <p class="card-text">Description: {{description}}</p>
                     <p class="card-text">Date: {{format_date date}}</p>
                     <p class="card-text">Time: {{time}}</p>
+                </div>
                     <a class="event-dog card-text" href="../../profile/owner/{{host_id}}"> Test</a>
-                    {{#if ownsEvent}}
-                    <button id="editFromSummary" class="btn" onclick="editFromSummary()" type="submit"> Edit Event
-                    <button>
+                {{#if ownsEvent}}
+                <div class="d-flex flex-row">
+                    <button id="editFromSummary" class="btn-quarter mr-4" onclick="editFromSummary()" type="submit">
+                        Edit Event </button>
+                    <button class=" delete-btn">
                         <img id="deleteFromSummary-btn" class="delete-event" data-id="{{event.id}}"
                             src="/images/delete-Freepik-32px.png" alt="Trash Can">
                     </button>
-                    {{/if}}
-                    </button>
                 </div>
+                {{/if}}
             </div>
         </div>
     </div>
@@ -69,9 +71,9 @@ If owned by user, allow edit; otherwise, view public info --}}
             </div>
 
             <div class="input-box">
-                <input id="editEvent_datePickerId" class="staDate editevent-date" name="event.date"
-                    type="text" value="{{format_date date}}" placeholder="{{format_date date}}"
-                    onfocus="(this.type='date')" class="form-input">
+                <input id="editEvent_datePickerId" class="staDate editevent-date" name="event.date" type="text"
+                    value="{{format_date date}}" placeholder="{{format_date date}}" onfocus="(this.type='date')"
+                    class="form-input">
                 <label for="event.date" class="form-label">Date:</label>
                 <div class="no-date-msg invalid-msg d-none">
                     Select a date

@@ -80,6 +80,28 @@ document.querySelector('.comments').addEventListener('click', delCommentButtonHa
 //     };
 // };
 
-// document.querySelector('.submitEditComment-btn').addEventListener('click', (event) => {
+// document.querySelector('#submitEditComment-btn').addEventListener('click', (event) => {
 //     editCommentFormHandler(event);
 // });
+
+const lists = document.querySelectorAll(".filter-list");
+lists.forEach(function (list) {
+    const liCount = list.querySelectorAll("li").length;
+    if (liCount > 5) {
+        list.querySelector(".more").classList.add("showMe");
+    }
+});
+
+const moreEls = document.querySelectorAll(".more");
+moreEls.forEach(function (more) {
+    more.addEventListener("click", function (evt) {
+        const more = evt.target;
+        const ul = more.previousElementSibling;
+        ul.querySelector("li").forEach(function (li) {
+            li.toggleClass("showList");
+        });
+        more.innerHTML = more.innerHTML.includes("more")
+            ? "See less..."
+            : "See more...";
+    });
+});

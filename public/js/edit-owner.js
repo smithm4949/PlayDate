@@ -30,7 +30,7 @@ const editOwnerFormHandler = async (event) => {
 
   // IF response is successful, then reload
   if (response.ok) {
-    document.location.replace(`/profile`);
+    document.location.replace(`/profile/owner/${id}`);
   }
   else {
     console.log(response.statusText);

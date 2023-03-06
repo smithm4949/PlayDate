@@ -9,7 +9,7 @@
 <div class="card">
     <div class="edit-owner-form card-body" style="display: block;">
         {{>uploadOwner}}
-        <h3 class="card-header"> Edit {{username}}'s Information</h3>
+        <h3 class="card-header mb-4"> Edit {{username}}'s Information</h3>
         <form>
 
             <div class="d-flex flex-row align-items-center">
@@ -57,7 +57,6 @@
                 </div>
             </div>
 
-
             <div>
                 <div>
                     <label id="description-label">{{username}}'s Description</label>
@@ -75,7 +74,7 @@
         <div class="d-flex justify-content-end">
             <button id="delete-owner-btn" class="mt-5 d-flex justify-content-center align-items-center"
                 onclick="delOwnerButtonHandler()">
-                <img class="delete-owner" data-id="{{id}}" src="/images/delete-Freepik-32px-dkred.PNG" alt="Trash Can">
+                <img class="delete-owner" data-id="{{id}}" src="/images/delete-Freepik-32px-dkred.png" alt="Trash Can">
                 Delete
                 Profile
             </button>

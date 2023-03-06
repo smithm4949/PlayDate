@@ -11,13 +11,17 @@
     </div> --}}
 
 
+
     <div>
         <section class="current-events">
             <h2 class="my-events-title">All Events</h2>
+            {{#if logged_in}}
+            <a href="/profile"><button class="btn-half mt-2 mb-4">Add a New Event</button></a>
+            {{/if}}
             {{!-- {{#if events.length}} --}}
             <div class="event-card-container eventsHomePage-list flex-wrap">
-                <div class="eCards-section"> 
-                    <div class="eCards">            
+                <div class="eCards-section">
+                    <div class="eCards">
                         {{>eventcard}}
                     </div>
                 </div>
@@ -26,9 +30,6 @@
         </section>
     </div>
 
-    {{#if logged_in}}
-    <a href="/profile"><button class="btn">Add a New Event</button></a>
-    {{/if}}
 
     {{#unless logged_in}}
     <div>
@@ -55,7 +56,7 @@
 
 
 
-{{!-- ALL LOCAL EVENTS OF THE OWNER'S ZIP WILL SHOW UP HERE --}}
+    {{!-- ALL LOCAL EVENTS OF THE OWNER'S ZIP WILL SHOW UP HERE --}}
 
 
     {{!-- <div>

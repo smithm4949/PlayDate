@@ -389,7 +389,8 @@ select~label {
 
 #dCards-section {
     background-color: var(--orange);
-    border: 1px solid black;
+    border: 5px solid #bf720f50;
+    border-radius: 5px;
     height: 100%;
     width: 100%;
     overflow-x: scroll;
@@ -403,7 +404,8 @@ select~label {
 
 .eCards-section {
     background-color: var(--orange);
-    border: 1px solid black;
+    border: 5px solid #bf720f50;
+    border-radius: 5px;
     height: 100%;
     width: 100%;
     overflow-x: scroll;
@@ -590,6 +592,17 @@ textarea {
     font-weight: 700;
 }
 
+/* Sandy added below */
+.shown{
+    display:block;
+}
+
+  /* Sandy added below */
+
+.hidden{
+    display:none;
+}
+
 .image-label {
     font-size: 1.2em;
     color: var(--nav-text-color);
@@ -597,4 +610,14 @@ textarea {
     font-weight: 600;
     /* Disables pointer clicking and selecting/highlighting text */
     pointer-events: none;
+}
+
+.delete-btn {
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#dog-card-body {
+    line-height: 2em;
 }
