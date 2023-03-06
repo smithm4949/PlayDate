@@ -1,0 +1,23 @@
+<div id="profile-page d-flex flex-column align-items-center">
+
+    <div id="owner-section" style="display: block;">
+        <h1>Meet {{username}}!</h1>
+        <div class="d-flex flex-row align-items-center justify-content-center">
+            {{> ownercard}}
+        </div>
+    </div>
+
+    <div id="dog-section" style="display: block;">
+        <h2 class="my-dogs-title">{{username}}'s Dogs</h2>
+        {{!-- if statement prevents the horizontal scroll showing if no cards --}}
+        {{#if dogs.length}}
+        <div id="dCards-section">
+            <div id="dCards">
+                {{> dogcard}}
+            </div>
+        </div>
+        {{else}}
+        <h2 class="text-center">This user has no dogs</h2>
+        {{/if}}
+    </div>
+</div>
