@@ -1,5 +1,5 @@
 {{!-- Form for adding events --}}
-<div class="mb-5">
+<div class="mb-5 pb-5">
     <div id="addEventSection" style="display:block;">
         <h2>Do you want to create an event? </h2>
         <button onclick="showEventForm()" type="submit" class="btn-half">Add an EVENT!</button>
@@ -7,7 +7,7 @@
     <form id="eventForm" class="mt-5 eventForm" style="display: none;">
 
         <div class="input-box">
-            <input id="event-name" type="text" >
+            <input id="event-name" type="text" required>
             <label>Name</label>
             <div class="no-name-msg invalid-msg d-none">
                 Add your event's name
@@ -15,7 +15,7 @@
         </div>
 
         {{!-- <div class="input-box">
-            <input id="event-location_zip" type="number" >
+            <input id="event-location_zip" type="number" required>
             <label>Zip Code</label>
             <div class="no-zipcode-msg invalid-msg d-none">
                 Add your event's zip code
@@ -29,7 +29,7 @@
             <div>
                 <label id="description-label">Description</label>
             </div>
-            <textarea id="event-description" type="text" rows="6" ></textarea>
+            <textarea id="event-description" type="text" rows="6" required></textarea>
             <div class="no-description-msg invalid-msg d-none">
                 Tell us about the event!
             </div>
@@ -52,14 +52,14 @@
         </div>
 
         {{> recparks}}
-{{!-- 
+        {{!--
         <div class="d-flex flex-row align-items-center">
             <button id="back-btn" class="btn-half-alt" onclick="backEventForm()" type="submit">Back </button>
             <br> <br>
             <button id="submitEvent-btn" class="btn-half" type="submit">Submit</button>
         </div> --}}
 
-        
+
 
     </form>
 
