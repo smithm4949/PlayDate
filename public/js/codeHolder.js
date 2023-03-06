@@ -1,5 +1,10 @@
 // ME TO DO: 
 // --- form for editing the user fields (password needs to have placeholder of "Enter New Password")
+// Add {{#if ownsXyz}} for edit COMMENT button
+// Add {{#if ownsXyz}} for delete COMMENT button
+// Add a show more button for COMMENTS
+// - add in the eventController.js the 'id' for Comment attributes 
+
 
 // DONE
 // - updated homepage with horizontal scrolling and commented out some sections that are under construction
